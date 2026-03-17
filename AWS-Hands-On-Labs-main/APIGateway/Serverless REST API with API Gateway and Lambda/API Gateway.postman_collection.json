@@ -1,0 +1,193 @@
+{
+	"info": {
+		"_postman_id": "23a25139-9ab2-4193-b88b-baec1a82c4a7",
+		"name": "API Gateway",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "53246313",
+		"_collection_link": "https://www.postman.com/abhishek-kanade-dev-6820292/workspace/aws-labs/collection/53246313-23a25139-9ab2-4193-b88b-baec1a82c4a7?action=share&source=collection_link&creator=53246313"
+	},
+	"item": [
+		{
+			"name": "Get All Items",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://osluhr5yl2.execute-api.ap-south-1.amazonaws.com/dev/items",
+					"protocol": "https",
+					"host": [
+						"osluhr5yl2",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Item With ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://osluhr5yl2.execute-api.ap-south-1.amazonaws.com/dev/items/731216e3-86d7-4a4e-a50b-41a47809f903",
+					"protocol": "https",
+					"host": [
+						"osluhr5yl2",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"items",
+						"731216e3-86d7-4a4e-a50b-41a47809f903"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Item",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"Sample Item\",\"description\":\"This is a test\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://osluhr5yl2.execute-api.ap-south-1.amazonaws.com/dev/items",
+					"protocol": "https",
+					"host": [
+						"osluhr5yl2",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Item",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"Updated Item\",\"description\":\"Updated\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://osluhr5yl2.execute-api.ap-south-1.amazonaws.com/dev/items/731216e3-86d7-4a4e-a50b-41a47809f903",
+					"protocol": "https",
+					"host": [
+						"osluhr5yl2",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"items",
+						"731216e3-86d7-4a4e-a50b-41a47809f903"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Item With ID",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"Updated Item\",\"description\":\"Updated\"}"
+				},
+				"url": {
+					"raw": "https://osluhr5yl2.execute-api.ap-south-1.amazonaws.com/dev/items/731216e3-86d7-4a4e-a50b-41a47809f903",
+					"protocol": "https",
+					"host": [
+						"osluhr5yl2",
+						"execute-api",
+						"ap-south-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"dev",
+						"items",
+						"731216e3-86d7-4a4e-a50b-41a47809f903"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
