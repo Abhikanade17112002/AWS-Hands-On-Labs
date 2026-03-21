@@ -1,0 +1,64 @@
+# version: 0.2
+
+# phases:
+#   install:
+#     runtime-versions:
+#       java: corretto11
+#     commands:
+#       - echo "Installing any dependencies (if needed)..."
+#   pre_build:
+#     commands:
+#       - echo "Pre-build phase - running tests (optional)..."
+#       # mvn test
+#   build:
+#     commands:
+#       - echo "Build started on `date`"
+#       - mvn clean package
+#   post_build:
+#     commands:
+#       - echo "Build completed on `date`"
+#       - echo "Preparing deployment artifact..."
+#       # Create a clean directory structure for the artifact
+#       - mkdir -p deploy-artifact/scripts
+#       - cp target/demo-*.jar deploy-artifact/
+#       - cp appspec.yml deploy-artifact/
+#       - cp scripts/* deploy-artifact/scripts/
+#       - cd deploy-artifact
+#       - zip -r ../deployment-package.zip .
+#       - cd ..
+
+# artifacts:
+#   files:
+#     - deployment-package.zip
+#   discard-paths: yes
+
+
+
+
+
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto17
+    commands:
+      - echo "Installing any dependencies (if needed)..."
+  pre_build:
+    commands:
+      - echo "Pre-build phase..."
+  build:
+    commands:
+      - echo "Build started on `date`"
+      - mvn clean package -DskipTests
+  post_build:
+    commands:
+      - echo "Build completed on `date`"
+      - mv target/demo-*.jar target/demo.jar
+
+artifacts:
+  files:
+    - appspec.yml
+    - target/demo.jar
+    - scripts/**
+  discard-paths: no
